@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpmlj63xx5i35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80nbo"]
+shading_mode = 0
+albedo_color = Color(1, 0.756863, 0.368627, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e2o6t"]
+material = SubResource("StandardMaterial3D_80nbo")
+radius = 24.0
+height = 48.0
+
+[node name="sun" type="MeshInstance3D"]
+layers = 2
+mesh = SubResource("SphereMesh_e2o6t")
+
+[node name="light" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.964706, 0.831373, 1)
+light_energy = 1024.0
+light_cull_mask = 4294967293
+omni_range = 2000.0

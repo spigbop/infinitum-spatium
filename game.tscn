@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjmns8b7gmdca"]
+
+[ext_resource type="Script" uid="uid://qpxmjlb1gtn0" path="res://player.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dpmlj63xx5i35" path="res://star.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://cqlpig7d156lf" path="res://assets/models/spaceship.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dvqkj1jtw6ylr" path="res://assets/models/spaceship_outline.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b5q7kinp2o4ey" path="res://assets/flair/star_spawner.tscn" id="5_7jktm"]
+
+[node name="game" type="Node3D"]
+
+[node name="player" type="Node3D" parent="."]
+script = ExtResource("1_feb5d")
+
+[node name="model_anchor" type="Node3D" parent="player"]
+
+[node name="spaceship" parent="player/model_anchor" instance=ExtResource("2_fc0e3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="outline" parent="player/model_anchor/spaceship" instance=ExtResource("3_fc0e3")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, 0)
+
+[node name="fire_0" type="Node3D" parent="player/model_anchor/spaceship"]
+transform = Transform3D(1, 6.1946e-10, 4.40181e-12, -6.1946e-10, 0.9999, 0.0141716, 4.3805e-12, -0.0141716, 0.9999, 0.324839, 0, 1.49473)
+
+[node name="fire_1" type="Node3D" parent="player/model_anchor/spaceship"]
+transform = Transform3D(1, 1.2388e-09, 1.75682e-11, -1.2388e-09, 0.999598, 0.0283404, 1.75504e-11, -0.0283404, 0.999598, 0.65, 0, -1.495)
+
+[node name="go_here" type="Node3D" parent="player/model_anchor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="camera_anchor" type="Node3D" parent="player"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="camera" type="Camera3D" parent="player/camera_anchor"]
+transform = Transform3D(-4.12549e-08, 0.330514, -0.943801, 1.44472e-08, 0.943801, 0.330514, 1, 8.88178e-16, -4.37114e-08, -5.26606, 3.56491, 0)
+fov = 92.5295
+size = 6.36223
+
+[node name="sun" parent="." instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -403.186, -172.87, -2259.13)
+
+[node name="sun2" parent="." instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 623.711, 8.48077, -1304.26)
+
+[node name="star_spawner" parent="." instance=ExtResource("5_7jktm")]

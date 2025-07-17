@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dctfxqofqka3i"]
+
+[sub_resource type="Gradient" id="Gradient_p01rg"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kbc4h"]
+gradient = SubResource("Gradient_p01rg")
+
+[node name="sprite" type="Sprite3D"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+billboard = 1
+texture = SubResource("GradientTexture2D_kbc4h")

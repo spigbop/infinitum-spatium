@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqlpig7d156lf"]
+
+[ext_resource type="PackedScene" uid="uid://bmhfxbiayl38r" path="res://assets/models/spaceship.fbx" id="1_4dti3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dti3"]
+shading_mode = 2
+
+[node name="spaceship" instance=ExtResource("1_4dti3")]
+
+[node name="model" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_4dti3")

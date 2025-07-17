@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvqkj1jtw6ylr"]
+
+[ext_resource type="PackedScene" uid="uid://bmhfxbiayl38r" path="res://assets/models/spaceship.fbx" id="1_wd0ua"]
+[ext_resource type="Shader" uid="uid://c7wyk35iw40kp" path="res://3d_outline.gdshader" id="2_hwbo0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbndb"]
+render_priority = 0
+shader = ExtResource("2_hwbo0")
+shader_parameter/outline_color = Color(1, 1, 0.831373, 1)
+shader_parameter/outline_width = 1.0
+
+[node name="spaceship" instance=ExtResource("1_wd0ua")]
+
+[node name="model" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_mbndb")
